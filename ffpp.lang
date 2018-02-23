@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+This file is part of GtkSourceView
+
+Authors: Marco Barisione, Emanuele Aina
+Copyright (C) 2017 Simon Garnotel <simon.garnotel@gmail.com>
+
+GtkSourceView is free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public
+License as published by the Free Software Foundation; either
+version 2.1 of the License, or (at your option) any later version.
+
+GtkSourceView is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public
+License along with this library; if not, write to the Free Software
+Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+
+-->
+<language id="ffpp" _name="FreeFem++" version="2.0" _section="Source">
+	<metadata>
+		<property name="globs">*.edp;*.idp</property>
+		<property name="line-comment-start">//</property>
+		<property name="block-comment-start">/*</property>
+		<property name="block-comment-end">*/</property>
+	</metadata>
+
+	<styles>
+		<style id="keyword" _name="Keyword" map-to="cpp:keyword"/>
+		<style id="type" _name="Data Type" map-to="cpp:type"/>
+		<style id="function" _name="Function" map-to="cpp:common-defines"/>
+		<style id="preprocessor" _name="Preprocessor" map-to="c:preprocessor"/>
+	</styles>
+
+	<definitions>
+		<!-- FreeFem++-specific stuff (i.e. stuff which is not C++) -->
+		<context id="ffpp-proper">
+			<include>
+				<context id="keywords" style-ref="keyword">
+					<keyword>end</keyword>
+					<keyword>element</keyword>
+					<keyword>label</keyword>
+					<keyword>measure</keyword>
+					<keyword>mesure</keyword>
+					<keyword>Element</keyword>
+					<keyword>whoinElement</keyword>
+					<keyword>region</keyword>
+					<keyword>R3</keyword>
+					<keyword>vertex</keyword>
+					<keyword>im</keyword>
+					<keyword>l1</keyword>
+					<keyword>l2</keyword>
+					<keyword>linfty</keyword>
+					<keyword>max</keyword>
+					<keyword>min</keyword>
+					<keyword>re</keyword>
+					<keyword>sum</keyword>
+					<keyword>quantile</keyword>
+					<keyword>sort</keyword>
+					<keyword>x</keyword>
+					<keyword>y</keyword>
+					<keyword>z</keyword>
+					<keyword>length</keyword>
+					<keyword>area</keyword>
+					<keyword>coef</keyword>
+					<keyword>diag</keyword>
+					<keyword>m</keyword>
+					<keyword>n</keyword>
+					<keyword>nbcoef</keyword>
+					<keyword>nnz</keyword>
+					<keyword>resize</keyword>
+					<keyword>size</keyword>
+					<keyword>imax</keyword>
+					<keyword>imin</keyword>
+					<keyword>N</keyword>
+					<keyword>P</keyword>
+					<keyword>nuTriangle</keyword>
+					<keyword>ndof</keyword>
+					<keyword>ndofK</keyword>
+					<keyword>nt</keyword>
+					<keyword>be</keyword>
+					<keyword>hmax</keyword>
+					<keyword>hmin</keyword>
+					<keyword>nbe</keyword>
+					<keyword>nv</keyword>
+					<keyword>bordermesure</keyword>
+					<keyword>eof</keyword>
+					<keyword>good</keyword>
+					<keyword>default</keyword>
+					<keyword>fixed</keyword>
+					<keyword>flush</keyword>
+					<keyword>noshowbase</keyword>
+					<keyword>noshowpos</keyword>
+					<keyword>precision</keyword>
+					<keyword>scientific</keyword>
+					<keyword>seekp</keyword>
+					<keyword>showbase</keyword>
+					<keyword>showpos</keyword>
+					<keyword>tellp</keyword>
+					<keyword>ARGV</keyword>
+					<keyword>CG</keyword>
+					<keyword>CPUTime</keyword>
+					<keyword>Cholesky</keyword>
+					<keyword>Cofactor</keyword>
+					<keyword>Crout</keyword>
+					<keyword>Edge03d</keyword>
+					<keyword>GMRES</keyword>
+					<keyword>HaveUMFPACK</keyword>
+					<keyword>LU</keyword>
+					<keyword>NaN</keyword>
+					<keyword>P0</keyword>
+					<keyword>P03d</keyword>
+					<keyword>P0VF</keyword>
+					<keyword>P0edge</keyword>
+					<keyword>P1</keyword>
+					<keyword>P13d</keyword>
+					<keyword>P1b</keyword>
+					<keyword>P1b3d</keyword>
+					<keyword>P1dc</keyword>
+					<keyword>P1nc</keyword>
+					<keyword>P2</keyword>
+					<keyword>P23d</keyword>
+					<keyword>P2b</keyword>
+					<keyword>P2dc</keyword>
+					<keyword>P2h</keyword>
+					<keyword>RT0</keyword>
+					<keyword>RT03d</keyword>
+					<keyword>RT0Ortho</keyword>
+					<keyword>RTmodif</keyword>
+					<keyword>UMFPACK</keyword>
+					<keyword>append</keyword>
+					<keyword>binary</keyword>
+					<keyword>hTriangle</keyword>
+					<keyword>havesparsesolver</keyword>
+					<keyword>inside</keyword>
+					<keyword>lenEdge</keyword>
+					<keyword>nTonEdge</keyword>
+					<keyword>nuEdge</keyword>
+					<keyword>pi</keyword>
+					<keyword>qf1pE</keyword>
+					<keyword>qf1pElump</keyword>
+					<keyword>qf1pT</keyword>
+					<keyword>qf1pTlump</keyword>
+					<keyword>qf2pE</keyword>
+					<keyword>qf2pT</keyword>
+					<keyword>qf2pT4P1</keyword>
+					<keyword>qf3pE</keyword>
+					<keyword>qf4pE</keyword>
+					<keyword>qf5pE</keyword>
+					<keyword>qf5pT</keyword>
+					<keyword>qf7pT</keyword>
+					<keyword>qf9pT</keyword>
+					<keyword>qfV1</keyword>
+					<keyword>qfV1lump</keyword>
+					<keyword>qfV2</keyword>
+					<keyword>qfV5</keyword>
+					<keyword>searchMethod</keyword>
+					<keyword>sparsesolver</keyword>
+					<keyword>sparsesolverSym</keyword>
+					<keyword>storagetotal</keyword>
+					<keyword>storageused</keyword>
+					<keyword>verbosity</keyword>
+					<keyword>version</keyword>
+					<keyword>volume</keyword>
+					<keyword>volumelevelset</keyword>
+					<keyword>wait</keyword>
+					<keyword>ShowAlloc</keyword>
+					<keyword>Newton</keyword>
+					<keyword>NoGraphicWindow</keyword>
+					<keyword>NoUseOfWait</keyword>
+					<keyword>SameMesh</keyword>
+					<keyword>Unique</keyword>
+					<keyword>arealevelset</keyword>
+					<keyword>average</keyword>
+					<keyword>chtmpdir</keyword>
+					<keyword>time</keyword>
+					<keyword>fill</keyword>
+					<keyword>value</keyword>
+					<keyword>nbiso</keyword>
+					<keyword>coeff</keyword>
+					<keyword>dataname</keyword>
+					<keyword>order</keyword>
+					<keyword>mpirank</keyword>
+					<keyword>mpiCommWorld</keyword>
+					<keyword>mpiGroup</keyword>
+					<keyword>mpiRequest</keyword>
+					<keyword>sparams</keyword>
+					<keyword>mpisize</keyword>
+					<keyword>mpiUndefined</keyword>
+					<keyword>mpiAnySource</keyword>
+					<keyword>communicator</keyword>
+					<keyword>worker</keyword>
+					<keyword>dim</keyword>
+					<keyword>cmm</keyword>
+					<keyword>solver</keyword>
+					<keyword>aniso</keyword>
+					<keyword>nbvx</keyword>
+					<keyword>abserror</keyword>
+					<keyword>anisomax</keyword>
+					<keyword>cutoff</keyword>
+					<keyword>err</keyword>
+					<keyword>errg</keyword>
+					<keyword>inquire</keyword>
+					<keyword>IsMetric</keyword>
+					<keyword>iso</keyword>
+					<keyword>keepbackvertices</keyword>
+					<keyword>maxsubdiv</keyword>
+					<keyword>metric</keyword>
+					<keyword>nbjacoby</keyword>
+					<keyword>nbsmooth</keyword>
+					<keyword>nomeshgeneration</keyword>
+					<keyword>omega</keyword>
+					<keyword>periodic</keyword>
+					<keyword>powerin</keyword>
+					<keyword>ratio</keyword>
+					<keyword>rescaling</keyword>
+					<keyword>splitin2</keyword>
+					<keyword>splitpbedge</keyword>
+					<keyword>thetamax</keyword>
+					<keyword>uniform</keyword>
+					<keyword>fixedborder</keyword>
+					<keyword>flags</keyword>
+					<keyword>ivalue</keyword>
+					<keyword>maxit</keyword>
+					<keyword>mode</keyword>
+					<keyword>ncv</keyword>
+					<keyword>nev</keyword>
+					<keyword>rawvector</keyword>
+					<keyword>sigma</keyword>
+					<keyword>sym</keyword>
+					<keyword>tol</keyword>
+					<keyword>vector</keyword>
+					<keyword>which</keyword>
+					<keyword>op</keyword>
+					<keyword>t</keyword>
+					<keyword>eps</keyword>
+					<keyword>nbiter</keyword>
+					<keyword>precon</keyword>
+					<keyword>veps</keyword>
+					<keyword>tgv</keyword>
+					<keyword>tolpivot</keyword>
+					<keyword>meditff</keyword>
+					<keyword>save</keyword>
+					<keyword>orientation</keyword>
+					<keyword>ptmerge</keyword>
+					<keyword>transfo</keyword>
+					<keyword>optimize</keyword>
+					<keyword>aspectratio</keyword>
+					<keyword>bb</keyword>
+					<keyword>boundary</keyword>
+					<keyword>bw</keyword>
+					<keyword>cut</keyword>
+					<keyword>grey</keyword>
+					<keyword>hsv</keyword>
+					<keyword>nbarrow</keyword>
+					<keyword>ps</keyword>
+					<keyword>varrow</keyword>
+					<keyword>viso</keyword>
+					<keyword>init</keyword>
+					<keyword>strategy</keyword>
+					<keyword>tolpivotsym</keyword>
+					<keyword>facetcl</keyword>
+					<keyword>holelist</keyword>
+					<keyword>nboffacetcl</keyword>
+					<keyword>nbofregions</keyword>
+					<keyword>regionlist</keyword>
+					<keyword>switch</keyword>
+					<keyword>refface</keyword>
+					<keyword>split</keyword>
+					<keyword>zbound</keyword>
+					<keyword>labeldown</keyword>
+					<keyword>labelmid</keyword>
+					<keyword>labelup</keyword>
+					<keyword>opt</keyword>
+					<keyword>mpiMAX</keyword>
+					<keyword>mpiMIN</keyword>
+					<keyword>mpiSUM</keyword>
+					<keyword>mpiPROD</keyword>
+					<keyword>mpiLAND</keyword>
+					<keyword>mpiLOR</keyword>
+					<keyword>mpiLXOR</keyword>
+					<keyword>mpiBAND</keyword>
+					<keyword>mpiBXOR</keyword>
+				</context>
+
+				<context id="types" style-ref="type">
+					<keyword>border</keyword>
+					<keyword>Cmapmatrix</keyword>
+					<keyword>Cmatrix</keyword>
+					<keyword>complex</keyword>
+					<keyword>fespace</keyword>
+					<keyword>func</keyword>
+					<keyword>ifstream</keyword>
+					<keyword>mapmatrix</keyword>
+					<keyword>matrix</keyword>
+					<keyword>mesh</keyword>
+					<keyword>mesh3</keyword>
+					<keyword>ofstream</keyword>
+					<keyword>problem</keyword>
+					<keyword>real</keyword>
+					<keyword>solve</keyword>
+					<keyword>string</keyword>
+					<keyword>varf</keyword>
+					<keyword>macro</keyword>
+					<keyword>dmatrix</keyword>
+				</context>
+
+				<context id="function" style-ref="function">
+					<keyword>adj</keyword>
+					<keyword>find</keyword>
+					<keyword>rfind</keyword>
+					<keyword>seekg</keyword>
+					<keyword>tellg</keyword>
+					<keyword>AddLayers</keyword>
+					<keyword>AffineCG</keyword>
+					<keyword>AffineGMRES</keyword>
+					<keyword>BFGS</keyword>
+					<keyword>EigenValue</keyword>
+					<keyword>LinearCG</keyword>
+					<keyword>LinearGMRES</keyword>
+					<keyword>NLCG</keyword>					
+					<keyword>abs</keyword>
+					<keyword>acos</keyword>
+					<keyword>acosh</keyword>
+					<keyword>adaptmesh</keyword>
+					<keyword>arg</keyword>
+					<keyword>asin</keyword>
+					<keyword>asinh</keyword>
+					<keyword>assert</keyword>
+					<keyword>atan</keyword>
+					<keyword>atan2</keyword>
+					<keyword>atanh</keyword>
+					<keyword>atof</keyword>
+					<keyword>atoi</keyword>
+					<keyword>boundingbox</keyword>
+					<keyword>buildmesh</keyword>
+					<keyword>buildmeshborder</keyword>
+					<keyword>ceil</keyword>
+					<keyword>change</keyword>
+					<keyword>checkmovemesh</keyword>
+					<keyword>clock</keyword>
+					<keyword>complexEigenValue</keyword>
+					<keyword>conj</keyword>
+					<keyword>convect</keyword>
+					<keyword>cos</keyword>
+					<keyword>cosh</keyword>
+					<keyword>defaultoUMFPACK</keyword>
+					<keyword>defaultsolver</keyword>
+					<keyword>defaulttoCG</keyword>
+					<keyword>defaulttoGMRES</keyword>
+					<keyword>defaulttoUMFPACK</keyword>
+					<keyword>det</keyword>
+					<keyword>dumptable</keyword>
+					<keyword>dx</keyword>
+					<keyword>dxx</keyword>
+					<keyword>dxy</keyword>
+					<keyword>dxz</keyword>
+					<keyword>dy</keyword>
+					<keyword>dyx</keyword>
+					<keyword>dyy</keyword>
+					<keyword>dyz</keyword>
+					<keyword>dz</keyword>
+					<keyword>dzx</keyword>
+					<keyword>dzy</keyword>
+					<keyword>dzz</keyword>
+					<keyword>emptymesh</keyword>
+					<keyword>erf</keyword>
+					<keyword>erfc</keyword>
+					<keyword>exec</keyword>
+					<keyword>exit</keyword>
+					<keyword>exp</keyword>
+					<keyword>floor</keyword>
+					<keyword>getline</keyword>
+					<keyword>hypot</keyword>
+					<keyword>imag</keyword>
+					<keyword>int1d</keyword>
+					<keyword>int2d</keyword>
+					<keyword>int3d</keyword>
+					<keyword>intallVFedges</keyword>
+					<keyword>intalledges</keyword>
+					<keyword>intallfaces</keyword>
+					<keyword>interplotematrix</keyword>
+					<keyword>interpolate</keyword>
+					<keyword>isInf</keyword>
+					<keyword>isNaN</keyword>
+					<keyword>isNormal</keyword>
+					<keyword>j0</keyword>
+					<keyword>j1</keyword>
+					<keyword>jn</keyword>
+					<keyword>jump</keyword>
+					<keyword>lgamma</keyword>
+					<keyword>log</keyword>
+					<keyword>log10</keyword>
+					<keyword>lrint</keyword>
+					<keyword>lround</keyword>
+					<keyword>ltime</keyword>
+					<keyword>mean</keyword>
+					<keyword>movemesh</keyword>
+					<keyword>newconvect</keyword>
+					<keyword>norm</keyword>
+					<keyword>on</keyword>
+					<keyword>otherside</keyword>
+					<keyword>plot</keyword>
+					<keyword>polar</keyword>
+					<keyword>pow</keyword>
+					<keyword>randinit</keyword>
+					<keyword>randint31</keyword>
+					<keyword>randint32</keyword>
+					<keyword>randreal1</keyword>
+					<keyword>randreal2</keyword>
+					<keyword>randreal3</keyword>
+					<keyword>randres53</keyword>
+					<keyword>readmesh</keyword>
+					<keyword>readmesh3</keyword>
+					<keyword>renumbering</keyword>
+					<keyword>restrict</keyword>
+					<keyword>rint</keyword>
+					<keyword>round</keyword>
+					<keyword>savemesh</keyword>
+					<keyword>savesurfacemesh</keyword>
+					<keyword>set</keyword>
+					<keyword>setw</keyword>
+					<keyword>showCPU</keyword>
+					<keyword>sin</keyword>
+					<keyword>sinh</keyword>
+					<keyword>splitmesh</keyword>
+					<keyword>sqr</keyword>
+					<keyword>sqrt</keyword>
+					<keyword>square</keyword>
+					<keyword>system</keyword>
+					<keyword>tan</keyword>
+					<keyword>tanh</keyword>
+					<keyword>tgamma</keyword>
+					<keyword>toCarray</keyword>
+					<keyword>toRarray</keyword>
+					<keyword>toZarray</keyword>
+					<keyword>trace</keyword>
+					<keyword>triangulate</keyword>
+					<keyword>trunc</keyword>
+					<keyword>y0</keyword>
+					<keyword>y1</keyword>
+					<keyword>yn</keyword>
+					<keyword>savevtk</keyword>
+					<keyword>mshmet</keyword>
+					<keyword>savesol</keyword>
+					<keyword>gmshload</keyword>
+					<keyword>gmshload3</keyword>
+					<keyword>savesol</keyword>
+					<keyword>mpiBarrier</keyword>
+					<keyword>mpiSize</keyword>
+					<keyword>Irecv</keyword>
+					<keyword>Isend</keyword>
+					<keyword>processor</keyword>
+					<keyword>mpiWaitAny</keyword>
+					<keyword>mpiWait</keyword>
+					<keyword>mpiRank</keyword>
+					<keyword>metis</keyword>
+					<keyword>metisdual</keyword>
+					<keyword>broadcast</keyword>
+					<keyword>scotch</keyword>
+					<keyword>parmetis</keyword>
+					<keyword>mpiWtime</keyword>
+					<keyword>buildlayers</keyword>
+					<keyword>mmg3d</keyword>
+					<keyword>processorblock</keyword>
+					<keyword>mpiWaitAll</keyword>
+					<keyword>mpiWtick</keyword>
+					<keyword>Send</keyword>
+					<keyword>Recv</keyword>
+					<keyword>mpiAlltoall</keyword>
+					<keyword>mpiGather</keyword>
+					<keyword>mpiScatter</keyword>
+					<keyword>mpiReduce</keyword>
+					<keyword>mpiAllReduce</keyword>
+					<keyword>mpiReduceScatter</keyword>
+				</context>
+				
+				<context id="preprocessor" style-ref="preprocessor">
+					<keyword>include</keyword>
+					<keyword>load</keyword>
+					<keyword>cerr</keyword>
+					<keyword>cin</keyword>
+					<keyword>cout</keyword>
+					<keyword>endl</keyword>
+					<keyword>IFMACRO</keyword>
+					<keyword>ENDIFMACRO</keyword>
+				</context>
+			</include>
+		</context>
+
+		<!-- actual language definition: FreeFem++-specific stuff plus everything from C++ -->
+		<context id="ffpp">
+			<include>
+				<context ref="ffpp-proper"/>
+				<context ref="cpp:cpp"/>
+			</include>
+		</context>
+	</definitions>
+</language>
