@@ -1,5 +1,5 @@
 # Freefem-Gedit-lexer
 
-FreeFem++ language higlighter for Gedit
+[FreeFEM](https://freefem.org/) language higlighter for Gedit
 
-In Ubuntu, copy the `ffpp.lang` file in `/usr/share/gtksourceview-3.0/language-specs`
+Under Linux, copy the `ffpp.lang` file in `/usr/share/gtksourceview-3.0/language-specs` or in `/usr/share/gtksourceview-4/language-specs`
